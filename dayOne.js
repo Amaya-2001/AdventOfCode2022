@@ -8,13 +8,12 @@ function totalOfCalories() {
   //console.log(valuesOfCaloriesArray);
 
   const newArray = valuesOfCaloriesArray
-    .join("#")
-    .split(/(?:^|#)()(?:#|$)/)
-    .filter(Boolean)
-    .map((v) => v.split("#"));
-  //console.log(newArray);
+    .join("#") // '#' merge in to a string
+    .split(/(?:^|#)()(?:#|$)/) //split on empty string
+    .filter(Boolean) //remove empty values
+    .map((v) => v.split("#")); //split on '#'
 
-  const sum = (a, b) => Number(a) + Number(b);
+  const sum = (a, b) => Number(a) + Number(b); //sum take as an integer value
   const sumOfOneElveCalories = newArray.map((element) => element.reduce(sum));
   //console.log(sumOfOneElveCalories);
 
@@ -22,9 +21,10 @@ function totalOfCalories() {
   // console.log(maxCalories);
 
   var arrOfNumber = sumOfOneElveCalories.map(function (str) {
+    //all elements converted into number
     return parseInt(str, 10);
   });
-  const maxCalories = Math.max(...arrOfNumber);
+  const maxCalories = Math.max(...arrOfNumber); //get maiximum value using 'Math' method
   console.log("maxCalories:", maxCalories);
   //console.log(arrOfNumber);
 }
