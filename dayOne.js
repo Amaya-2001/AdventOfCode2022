@@ -16,10 +16,17 @@ function totalOfCalories() {
 
   const sum = (a, b) => Number(a) + Number(b);
   const sumOfOneElveCalories = newArray.map((element) => element.reduce(sum));
-  console.log(sumOfOneElveCalories);
+  //console.log(sumOfOneElveCalories);
 
-  const maxCalories = Math.max(...sumOfOneElveCalories);
-  console.log(maxCalories);
+  // const maxCalories = Math.max(...sumOfOneElveCalories);
+  // console.log(maxCalories);
+
+  var arrOfNumber = sumOfOneElveCalories.map(function (str) {
+    return parseInt(str, 10);
+  });
+  const maxCalories = Math.max(...arrOfNumber);
+  console.log("maxCalories:", maxCalories);
+  //console.log(arrOfNumber);
 }
 
 export default totalOfCalories;
